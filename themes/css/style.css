@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+body{
+	background: #f7f7f7;
+	font-family: 'PT Sans', sans-serif;
+	font-size:10pt;
+	padding: 0;
+	margin: 0;
+	color:#282828;
+}
+input:focus {
+	outline: none; 
+	font-family: 'PT Sans', sans-serif;
+}
+#wrapper{
+	border-top:5px solid #282828;
+}
+
+.reg_inp_bx{
+	border-radius: 4px;
+	border:1px solid #d3d3d3;
+	padding:7px 10px; 
+	margin:6px 0;
+	width: 80%;
+	outline: none;
+}
+.menu-nav{
+	list-style: none;
+
+}
+.menu-nav li{
+	padding: 0;
+	margin: 0;
+	float: left;
+}
+
+.txt-masked-gray{
+	color:#c5c5c5;
+	font-style: italic;
+}
+.un-masked-gray{
+	color: #323232;
+	font-style: normal;
+}
+.btn_gl_def{
+	border: none;
+	background: none;
+	border-radius: 4px;
+	font-size: 9pt;
+	padding:10px 34px;
+	color:#000;
+	/*80CBC4*/
+}
+.btn_add{
+ background: #7DBD00;
+ border: 1px solid #659409;
+}
+.btn_edit{
+	background: #d0d0d0;
+	border:1px solid #a7a7a7;
+}
+.btn_del{
+	background: #7986CB;
+	border: 1px solid #5C6BC0;
+}
+.btn_def{
+	background: #d0d0d0;
+	border:1px solid #a7a7a7;
+}
+.btn_active{
+	background: #689F38;
+	border:1px solid #558B2F;
+}
+.btn_inc{
+	background: #757575;
+	border: 1px solid #616161;
+}
+/*listing*/
+table.list_def{
+	width:100%;
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+.list_def tr:first-child{
+	font-size: 10pt;
+	background: #4f4f4f;
+	color:#f4f4f4;
+}
+.list_def td:first-child{
+	border-left:none;
+}
+.list_def td:last-child{
+	border-right: none;
+}
+.list_def td{
+	border:1px solid #b2b2b2;
+	padding:4px;
+}
+/* login module */
+.log_lbl{
+	font-size:10pt;
+}
+/* dashboard */
+.bl-ico-dashb{
+	margin:3px; 
+	border:1px dashed #000; 
+	display:inline-block; 
+	width:17%; 
+	height:120px;
+}
+.tbl-cellpad td{
+	padding: 6px 4px;
+}
+/* main menu */
+ul.menu-side-main{
+	list-style: none;
+	list-style-position: none;
+	margin: 0 !important;
+	text-indent: 0px;
+	padding: 6px 0;
+}
+.menu-side-main li{
+	padding:7px 20px;
+	margin: 0;
+	text-indent: 0px;
+	border-bottom:1px solid #383838;
+}
+.none-cs{
+	margin: 0;
+	padding: 0;
+}
+.breadcrumbs{
+	padding:9px 0;
+	font-size: 9pt;
+	color:#a3a3a3;
+}
