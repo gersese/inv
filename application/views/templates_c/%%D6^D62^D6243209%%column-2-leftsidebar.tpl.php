@@ -1,7 +1,8 @@
-<?php /* Smarty version 2.6.30, created on 2017-07-30 15:10:01
+<?php /* Smarty version 2.6.30, created on 2017-08-01 17:02:03
          compiled from page/column-2-leftsidebar.tpl */ ?>
 <div style="font-size: 9pt; text-align: right; background: #303030; color:#d3d3d3">
-	<div style="display: inline-block; margin: : 5px; ">Welcome&nbsp;<span>Administrator</span><div style="display:inline-block; padding:8px 20px 8px 25px; background: #565656; margin-left: 10px; ">Sign Out</div></div>
+	<div style="display: inline-block; margin: : 5px; ">Welcome&nbsp;<span><?php echo $this->_tpl_vars['username']; ?>
+</span><div style="display:inline-block; padding:8px 20px 8px 25px; background: #565656; margin-left: 10px; "><input type="button" onclick="signOut()" value="Sign Out"/></div></div>
 </div>
 <div>
 <div style="border:0px solid #000; display:inline-block; vertical-align: top; width:20%; height:130%; background: #232323; color:#ededed">

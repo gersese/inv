@@ -71,7 +71,16 @@ class GCA_Controller extends CI_Controller {
 		$this->smr_frend->assign('page', $pageHtml);
 		$this->smr_frend->assign('index', 'module/'. $module . '/'. 'index.tpl');
 
+
 		$this->smr_frend->view('core/core-page.tpl');
 		
+	}
+
+	function setViewParameters($parameters)
+	{
+		foreach($parameters as $key => $value)
+		{
+			$this->smr_frend->assign($key, $value);
+		}
 	}
 }

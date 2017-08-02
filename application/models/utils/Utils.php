@@ -4,6 +4,7 @@ class Utils extends GCA_Model {
 	
 	function __construct(){
 		parent::__construct();
+		$this->load->library('session');
 	}
 
 	function getHeaders(){
@@ -15,6 +16,11 @@ class Utils extends GCA_Model {
 			$items[] = $itm;
 		}
 		return $items;
+	}
+
+	public function hasSession()
+	{
+		return $this->session->userdata('user_id') != null;
 	}
 	
 } 

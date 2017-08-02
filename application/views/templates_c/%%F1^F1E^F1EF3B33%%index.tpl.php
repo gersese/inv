@@ -1,8 +1,7 @@
-<?php /* Smarty version 2.6.30, created on 2017-08-01 07:09:31
+<?php /* Smarty version 2.6.30, created on 2017-08-01 17:29:53
          compiled from module/login/index.tpl */ ?>
 
 <div style="border:0px solid #000; margin:100px auto; width: 70%;">
-	<!-- <form id="login_form" method="post"> -->
 	<table width="100%" cellpadding="0" cellspacing="0" style="table-layout: fixed; ">
 		<tr>
 			<td style="border:0px solid #d3d3d3"><div><img src="<?php echo $this->_tpl_vars['global_dec']['imgpath']; ?>
@@ -36,9 +35,13 @@
 							<input type="submit" value="Login" onclick="login()" />
 						</td>
 					</tr>
+					<tr>
+						<td>
+							<label id="login_message" for="message"></label>
+						</td>
+					</tr>
 				</table>
 			</div></td>
 		</tr>
 	</table>
-	<!-- </form> -->
 </div>

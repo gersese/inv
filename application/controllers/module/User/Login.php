@@ -5,7 +5,7 @@ class Login extends GCA_Controller
 {
 	const HASHING_ALGORITHM = 'sha256';
 	const LOGIN_SUCCESS_REDIRECT = 'index.php/module/dashboard/dashboard';
-
+	const URL_DASHBOARD = 'index.php/module/dashboard/dashboard';
 	/**
 	 * Index Page for this controller.
 	 *
@@ -29,6 +29,14 @@ class Login extends GCA_Controller
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->model('utils');
+
+		if($this->utils->hasSession())
+		{
+			redirect(base_url() . self::URL_DASHBOARD);
+			return;
+		}
+
 		$this->load->model('module/user/user_model');
 		$this->load->helper('url_helper');
 	}
@@ -42,13 +50,19 @@ class Login extends GCA_Controller
 
 		 if($this->isValidated($user))
 		 {
-		 	$this->load->library('session');
-		 	$this->session->user = $user;
+
+		 	$this->session->set_userdata(
+		 		array(
+		 			'user_id' => $user->id,
+		 			'username' => $user->username,
+		 			'user_role_id' => $user->user_role_id
+		 		)
+		 	);
+
 			echo json_encode(array('validated' => true));
 		 }
 		 else
 		 {
-		 	$data['message'] = 'Invalid login';
 			echo json_encode(array('validated' => false));
 		 }
 

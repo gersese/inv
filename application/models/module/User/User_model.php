@@ -15,7 +15,7 @@
 					'username' => $username,
 					'password' => $password)
 				);
-			return $query->row_array();
+			return $query->row();
 		}
 	}
 ?>
