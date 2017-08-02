@@ -13,7 +13,7 @@ function login()
 		{
 			if(data.validated)
 			{
-				window.location = '../../module/dashboard/dashboard/';
+				window.location = '../../Main';
 			}
 			else
 			{
@@ -32,16 +32,35 @@ function signOut()
 	jQuery.ajax(
 	{
 		type : 'POST',
-		url : 'signOut',
+		url : 'main/signOut',
 		dataType : 'json',
 		success : function(data)
 		{
-			window.location = '../dashboard/';
+			window.location = 'module/user/login';
+		},
+		error : function(data)
+		{
+			alert(data.status);
 		}
 	});
 }
 
 function showPreferences()
 {
-	window.location = 'module/preferences/preferences';
+	jQuery('#main').load('module/preferences/preferences');
+}
+
+function showDashboard()
+{
+	jQuery('#main').load('module/dashboard/dashboard');
+}
+
+function showPurchaseOrder()
+{
+	jQuery('#main').load('module/purchase_order/purchase_order');
+}
+
+function showTransactions()
+{
+	jQuery('#main').load('module/transaction/transaction');
 }

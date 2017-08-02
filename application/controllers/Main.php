@@ -1,9 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Preferences extends GCA_Controller 
+class Main extends GCA_Controller 
 {
 	const URL_LOGIN_PAGE = 'index.php/module/user/login';
+	const URL_PREFERENCES_PAGE = 'index.php/module/preferences/preferences';
 
 	/**
 	 * Index Page for this controller.
@@ -20,13 +21,34 @@ class Preferences extends GCA_Controller
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	public function index()
+	{
+		if($this->utils->hasSession())
+		{
+			$data['username'] = $this->session->userdata('username');
+			$this->setViewParameters($data);
+			$this->renderView('dashboard');
+			$this->renderMain(2, 1);
+		}
+		else
+		{
+			$this->session->sess_destroy();
+			redirect(base_url() . self::URL_LOGIN_PAGE);
+		}
+
+	}
+
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->library('session');
+		$this->load->model('utils');
+		$this->load->helper('url');
 	}
 
-	public function index()
+	public function signOut()
 	{
-		$this->renderView('preferences');
+		$this->session->sess_destroy();
+		echo json_encode(array("login_url" => base_url() . self::URL_LOGIN_PAGE));
 	}
 }

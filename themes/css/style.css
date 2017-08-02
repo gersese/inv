@@ -134,3 +134,9 @@ ul.menu-side-main{
 	font-size: 9pt;
 	color:#a3a3a3;
 }
+
+.sidebar-links
+{
+	color: white;
+	text-decoration: none;
+}

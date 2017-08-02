@@ -33,8 +33,8 @@ class Login extends GCA_Controller
 
 		if($this->utils->hasSession())
 		{
-			redirect(base_url() . self::URL_DASHBOARD);
-			return;
+			//redirect(base_url() . self::URL_DASHBOARD);
+			//return;
 		}
 
 		$this->load->model('module/user/user_model');
