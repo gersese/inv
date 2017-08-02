@@ -40,3 +40,8 @@ function signOut()
 		}
 	});
 }
+
+function showPreferences()
+{
+	window.location = 'module/preferences/preferences';
+}

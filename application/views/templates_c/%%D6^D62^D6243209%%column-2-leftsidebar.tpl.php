@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.30, created on 2017-08-01 17:02:03
+<?php /* Smarty version 2.6.30, created on 2017-08-02 03:51:51
          compiled from page/column-2-leftsidebar.tpl */ ?>
 <div style="font-size: 9pt; text-align: right; background: #303030; color:#d3d3d3">
 	<div style="display: inline-block; margin: : 5px; ">Welcome&nbsp;<span><?php echo $this->_tpl_vars['username']; ?>
@@ -18,7 +18,7 @@
 			<li>Products</li>
 			<li>Transaction</li>
 			<li>Purchase Order</li>
-			<li>Preferences</li>
+			<li><input type="button" value="aws" onclick="showPreferences()"/></li>
 		</ul>
 	</div>
 </div>

@@ -14,7 +14,7 @@
 			<li>Products</li>
 			<li>Transaction</li>
 			<li>Purchase Order</li>
-			<li>Preferences</li>
+			<li><input type="button" value="aws" onclick="showPreferences()"/></li>
 		</ul>
 	</div>
 </div>
