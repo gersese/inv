@@ -20,7 +20,11 @@ class Products extends GCA_Controller {
 	 */
 	public function index()
 	{
-		// Listview Default;
-		$this->_renderHtmlMod('products',2,1);
+		$this->renderView('product');
+	}
+
+	public function __construct()
+	{
+		parent::__construct();
 	}
 }
