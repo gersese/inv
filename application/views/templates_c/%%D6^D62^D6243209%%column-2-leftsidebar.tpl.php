@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.30, created on 2017-08-02 07:00:08
+<?php /* Smarty version 2.6.30, created on 2017-08-02 11:02:06
          compiled from page/column-2-leftsidebar.tpl */ ?>
 <div style="font-size: 9pt; text-align: right; background: #303030; color:#d3d3d3">
 	<div style="display: inline-block; margin: : 5px; ">Welcome&nbsp;<span><?php echo $this->_tpl_vars['username']; ?>

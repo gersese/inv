@@ -1,10 +1,10 @@
 <?php
 
-class Utils extends GCA_Model {
-	
+class Utils extends GCA_Model 
+{
+	const HASHING_ALGORITHM = 'sha256';
 	function __construct(){
 		parent::__construct();
-		$this->load->library('session');
 	}
 
 	function getHeaders(){
@@ -20,7 +20,14 @@ class Utils extends GCA_Model {
 
 	public function hasSession()
 	{
+		$this->load->library('session');
 		return $this->session->userdata('user_id') != null;
 	}
+
+	public 	function encryptPassword($password)
+	{
+		return hash(self::HASHING_ALGORITHM, md5($password));
+	}
+
 	
 } 

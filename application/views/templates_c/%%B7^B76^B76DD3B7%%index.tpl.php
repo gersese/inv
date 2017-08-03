@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.30, created on 2017-07-29 15:12:31
+<?php /* Smarty version 2.6.30, created on 2017-08-02 11:11:54
          compiled from module/dashboard/index.tpl */ ?>
 <div style="border:0px solid #000;">
 	<div class="bl-ico-dashb">

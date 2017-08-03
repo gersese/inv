@@ -41,6 +41,7 @@ class GCA_Controller extends CI_Controller {
 		$this->smr_frend->assign('htmlhead', $html_head);
 	}
 
+
 	function _renderHtmlMod($module='', $page=1, $cols_sidebar=1){
 
 		if(!$module){
@@ -118,5 +119,10 @@ class GCA_Controller extends CI_Controller {
 		{
 			$this->smr_frend->assign($key, $value);
 		}
+	}
+
+	public function iterateHtmlOnView($htmlArray)
+	{
+		$this->smr_frend->assign('html_array', $htmlArray);
 	}
 }

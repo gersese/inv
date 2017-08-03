@@ -45,6 +45,42 @@ function signOut()
 	});
 }
 
+function registerUser()
+{
+	jQuery.ajax(
+	{
+		type : 'POST',
+		url : 'module/user/registration/doRegister',
+		dataType : 'json',
+		data : {
+			username : 	jQuery('#username').val(),
+			password : jQuery('#password').val(),
+			retyped_password : jQuery('#retyped_password').val(),
+			user_role : jQuery('#user_role').val()
+		},
+		success : function(data)
+		{
+			if(data.success)
+			{
+				jQuery('#message').html('success!');
+			}
+			else
+			{
+				jQuery('#message').html(data.message);
+			}
+		},
+		error : function(data)
+		{
+			jQuery('#message').html(data.status);
+		}
+	});
+}
+
+function loadUserRegistration()
+{
+	jQuery("#main").load('module/user/registration')
+}
+
 function showPreferences()
 {
 	jQuery('#main').load('module/preferences/preferences');

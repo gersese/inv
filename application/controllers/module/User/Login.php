@@ -3,8 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends GCA_Controller 
 {
-	const HASHING_ALGORITHM = 'sha256';
-	const LOGIN_SUCCESS_REDIRECT = 'index.php/module/dashboard/dashboard';
 	const URL_DASHBOARD = 'index.php/module/dashboard/dashboard';
 	/**
 	 * Index Page for this controller.
@@ -33,18 +31,20 @@ class Login extends GCA_Controller
 
 		if($this->utils->hasSession())
 		{
-			//redirect(base_url() . self::URL_DASHBOARD);
-			//return;
+			redirect(base_url() . self::URL_DASHBOARD);
 		}
-
-		$this->load->model('module/user/user_model');
-		$this->load->helper('url_helper');
+		else
+		{
+			$this->load->model('module/user/user_model');
+			$this->load->model('utils/utils');
+			$this->load->helper('url_helper');
+		}
 	}
 
 	public function doLogin()
 	{
 		 $username = $this->input->post('username');
-		 $password = $this->encryptPassword($this->input->post('password'));
+		 $password = $this->utils->encryptPassword($this->input->post('password'));
 		 
 		 $user = $this->user_model->validateUser($username, $password);
 
@@ -66,11 +66,6 @@ class Login extends GCA_Controller
 			echo json_encode(array('validated' => false));
 		 }
 
-	}
-
-	function encryptPassword($password)
-	{
-		return hash(self::HASHING_ALGORITHM, md5($password));
 	}
 
 	function isValidated($user)
