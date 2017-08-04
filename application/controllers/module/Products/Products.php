@@ -20,7 +20,7 @@ class Products extends GCA_Controller {
 	 */
 	public function index()
 	{
-		$this->renderView('product');
+		$this->renderView('products');
 	}
 
 	public function __construct()

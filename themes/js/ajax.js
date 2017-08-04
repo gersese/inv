@@ -100,3 +100,8 @@ function showTransactions()
 {
 	jQuery('#main').load('module/transaction/transaction');
 }
+
+function showProducts()
+{
+	jQuery('#main').load('module/products/products');
+}

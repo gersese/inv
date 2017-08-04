@@ -45,7 +45,7 @@ class Registration extends GCA_Controller
 
 		if($password != $retyped_password)
 		{
-			$willRegister = false;
+			$willRegister = false; 
 			$message = 'Passwords does not match.';
 		}
 		if($this->user_model->isUsernameTaken($username))
